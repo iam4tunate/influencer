@@ -1,0 +1,63 @@
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    background-color: $color-black;
+
+    &:not(:last-child) {
+        margin-bottom: 6rem;
+    }
+
+    &-photo {
+        align-self: start;
+        border: 2px solid #777;
+        border-radius: 50%;
+        height: auto;
+        width: 6rem;
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    &-text {
+        font-size: 1.1rem;
+        padding: 1.5rem 0 2rem;
+    }
+
+    &-name {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1rem;
+
+        span {
+            text-transform: capitalize;
+            color: $color-coral;
+            font-size: 1.1rem;
+
+            &::before {
+                display: block;
+                content: "";
+                width: 2.5rem;
+                height: 2px;
+                background-color: #777;
+                margin: 0 .4rem 0 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $bp-md) {
+    .testimonial {
+        &:not(:last-child) {
+            margin-bottom: 0;
+        }
+
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 4rem;
+        }
+    }
+}

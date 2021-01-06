@@ -1,0 +1,86 @@
+.team {
+    &-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__photo {
+        display: flex;
+        flex-direction: column;
+
+
+        &:not(:last-child) {
+            margin-bottom: 4rem;
+        }
+
+        &>span {
+            padding: .7rem 0 0 .3rem;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: $color-coral;
+            text-transform: uppercase;
+        }
+
+        img {
+            height: 30rem;
+            object-fit: contain;
+            border: 1px solid $color-black;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+        }
+    }
+}
+
+@media screen and (min-width: $bp-sm) {
+    .team {
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 3rem;
+        }
+
+        &__photo {
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }
+
+            img {
+                object-fit: fill;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $bp-md) {
+    .team {
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 3rem;
+        }
+
+        &__photo {
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $bp-lg) {
+    .team {
+        &-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 3rem;
+        }
+
+        &__photo {
+            img {
+                height: 100%;
+            }
+        }
+    }
+}
